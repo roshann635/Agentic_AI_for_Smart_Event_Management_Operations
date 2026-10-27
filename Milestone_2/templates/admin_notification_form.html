@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Send notification</h1>
+<form method="post">
+  <input name="recipient" placeholder="Recipient" required>
+  <input name="channel" value="email" placeholder="Channel">
+  <input name="subject" placeholder="Subject" required>
+  <textarea name="message" placeholder="Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+{% endblock %}

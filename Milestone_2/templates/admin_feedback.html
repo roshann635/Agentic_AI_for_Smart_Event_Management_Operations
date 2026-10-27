@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Feedback</h1>
+<ul>{% for item in feedbacks %}<li>{{ item.event.title }} - {{ item.rating }}/5: {{ item.comment }}</li>{% endfor %}</ul>
+{% endblock %}

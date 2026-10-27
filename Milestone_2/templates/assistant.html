@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>EventOps Assistant</h1>
+<form method="post" action="{{ url_for('assistant_api') }}" id="assistant-form">
+  <input name="message" id="message" placeholder="Ask about your events" required>
+  <button type="submit">Ask</button>
+</form>
+<pre id="assistant-response"></pre>
+<script>
+document.getElementById('assistant-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const response = await fetch('{{ url_for("assistant_api") }}', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({message: document.getElementById('message').value})
+  });
+  const data = await response.json();
+  document.getElementById('assistant-response').textContent = data.reply || data.error;
+});
+</script>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ 'Edit' if event else 'Add' }} event</h1>
+<form method="post">
+  <input name="title" value="{{ event.title if event else '' }}" placeholder="Title" required>
+  <textarea name="description" placeholder="Description">{{ event.description if event else '' }}</textarea>
+  <input name="date" value="{{ event.date if event else '' }}" placeholder="Date">
+  <input name="time" value="{{ event.time if event else '' }}" placeholder="Time">
+  <input name="location" value="{{ event.location if event else '' }}" placeholder="Location">
+  <input name="capacity" type="number" value="{{ event.capacity if event else '' }}" placeholder="Capacity">
+  <select name="status"><option>upcoming</option><option>completed</option></select>
+  <button type="submit">Save</button>
+</form>
+{% endblock %}

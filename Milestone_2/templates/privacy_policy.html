@@ -1,0 +1,712 @@
+
+{% extends "base.html" %}
+
+{% block title %}Privacy Policy — EventOps AI{% endblock %}
+
+{% block extra_css %}
+<style>
+    .privacy-page {
+        background: linear-gradient(145deg, #f0f4ff 0%, #f8f9fc 100%);
+        padding: 2.5rem 1rem;
+        min-height: 80vh;
+    }
+
+    .privacy-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .privacy-hero {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: white;
+        padding: 3rem 2rem;
+        border-radius: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 15px 40px rgba(13, 110, 253, 0.18);
+    }
+
+    .privacy-hero .hero-icon {
+        width: 70px;
+        height: 70px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.18);
+        font-size: 2.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-hero h1 {
+        font-weight: 800;
+        margin-bottom: 0.8rem;
+    }
+
+    .privacy-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.92;
+        line-height: 1.7;
+    }
+
+    .privacy-meta {
+        margin-top: 1.25rem;
+        font-size: 0.9rem;
+        opacity: 0.85;
+    }
+
+    .privacy-layout {
+        display: grid;
+        grid-template-columns: 250px minmax(0, 1fr);
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    .privacy-sidebar,
+    .privacy-section {
+        background: white;
+        border-radius: 1.2rem;
+        box-shadow: 0 8px 30px rgba(31, 45, 61, 0.06);
+    }
+
+    .privacy-sidebar {
+        padding: 1.25rem;
+        position: sticky;
+        top: 1.5rem;
+    }
+
+    .privacy-sidebar h5 {
+        font-weight: 750;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-sidebar a {
+        display: block;
+        padding: 0.55rem 0.7rem;
+        margin-bottom: 0.25rem;
+        border-radius: 0.6rem;
+        text-decoration: none;
+        color: #495057;
+        font-size: 0.9rem;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .privacy-sidebar a:hover {
+        background: #eef3ff;
+        color: #0d6efd;
+    }
+
+    .privacy-content {
+        min-width: 0;
+    }
+
+    .privacy-section {
+        padding: 1.75rem;
+        margin-bottom: 1.25rem;
+        scroll-margin-top: 1.5rem;
+    }
+
+    .privacy-section h2 {
+        font-size: 1.3rem;
+        font-weight: 750;
+        color: #212529;
+        margin-bottom: 1rem;
+    }
+
+    .privacy-section h2 i {
+        color: #0d6efd;
+        margin-right: 0.5rem;
+    }
+
+    .privacy-section p,
+    .privacy-section li {
+        color: #596579;
+        line-height: 1.8;
+    }
+
+    .privacy-section ul {
+        padding-left: 1.4rem;
+        margin-bottom: 0;
+    }
+
+    .privacy-section li {
+        margin-bottom: 0.55rem;
+    }
+
+    .privacy-notice {
+        padding: 1.2rem;
+        border-radius: 1rem;
+        background: #eef4ff;
+        border-left: 4px solid #0d6efd;
+        color: #344563;
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+    }
+
+    .privacy-notice i {
+        color: #0d6efd;
+        margin-right: 0.4rem;
+    }
+
+    .privacy-contact {
+        background: linear-gradient(135deg, #f0f4ff, #f8f0ff);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+    }
+
+    .privacy-contact a {
+        color: #0d6efd;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .privacy-contact a:hover {
+        text-decoration: underline;
+    }
+
+    .privacy-bottom {
+        text-align: center;
+        color: #6c757d;
+        padding: 1.5rem 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .privacy-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .privacy-sidebar {
+            position: static;
+        }
+
+        .privacy-hero {
+            padding: 2rem 1.25rem;
+        }
+
+        .privacy-section {
+            padding: 1.25rem;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .privacy-sidebar a {
+            transition: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="privacy-page">
+    <div class="privacy-container">
+
+        <!-- Page Header -->
+        <header class="privacy-hero text-center">
+            <div class="hero-icon">
+                <i class="bi bi-shield-lock"></i>
+            </div>
+
+            <h1>Privacy Policy</h1>
+
+            <p>
+                Your privacy matters. This policy explains how EventOps AI
+                handles information when you use our event management
+                platform, website, and AI-powered features.
+            </p>
+
+            <div class="privacy-meta">
+                <i class="bi bi-calendar3 me-1"></i>
+                Effective date: October 15, 2026
+                <span class="mx-2">•</span>
+                <i class="bi bi-arrow-repeat me-1"></i>
+                Review this policy periodically
+            </div>
+        </header>
+
+        <div class="privacy-notice">
+            <i class="bi bi-info-circle-fill"></i>
+            <strong>Please read this policy carefully.</strong>
+            It describes the information the platform may process and
+            the choices available to you. The details should be reviewed
+            and updated to match the application's actual deployment,
+            integrations, and data-handling practices.
+        </div>
+
+        <div class="privacy-layout">
+
+            <!-- Table of Contents -->
+            <aside class="privacy-sidebar">
+                <h5>
+                    <i class="bi bi-list-ul me-2 text-primary"></i>
+                    On this page
+                </h5>
+
+                <a href="#overview">1. Overview</a>
+                <a href="#information">2. Information We Collect</a>
+                <a href="#usage">3. How We Use Information</a>
+                <a href="#ai">4. AI Features</a>
+                <a href="#sharing">5. Sharing and Disclosure</a>
+                <a href="#security">6. Data Security</a>
+                <a href="#retention">7. Data Retention</a>
+                <a href="#rights">8. Your Privacy Choices</a>
+                <a href="#cookies">9. Cookies and Storage</a>
+                <a href="#children">10. Children's Privacy</a>
+                <a href="#third-party">11. Third-Party Services</a>
+                <a href="#changes">12. Policy Updates</a>
+                <a href="#contact">13. Contact Us</a>
+            </aside>
+
+            <!-- Policy Content -->
+            <div class="privacy-content">
+
+                <section class="privacy-section" id="overview">
+                    <h2>
+                        <i class="bi bi-file-earmark-text"></i>
+                        1. Overview
+                    </h2>
+
+                    <p>
+                        EventOps AI is an event management platform designed
+                        to support event organization, registrations,
+                        venue coordination, speaker management, sponsorship
+                        tracking, notifications, and AI-assisted workflows.
+                    </p>
+
+                    <p>
+                        This Privacy Policy explains how information may be
+                        collected, used, stored, and disclosed when you visit
+                        the website or use its features.
+                    </p>
+
+                    <p>
+                        By using the platform, you acknowledge that you have
+                        had the opportunity to review this policy. Where
+                        consent is legally required for a particular activity,
+                        we will seek that consent separately.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="information">
+                    <h2>
+                        <i class="bi bi-database"></i>
+                        2. Information We Collect
+                    </h2>
+
+                    <p>Depending on the features you use, the platform may process:</p>
+
+                    <ul>
+                        <li>
+                            <strong>Account information:</strong>
+                            Your name, email address, account credentials,
+                            and account role.
+                        </li>
+
+                        <li>
+                            <strong>Authentication information:</strong>
+                            Information required to verify your identity
+                            and maintain your authenticated session.
+                            Passwords should be stored as secure hashes,
+                            not as plain text.
+                        </li>
+
+                        <li>
+                            <strong>Event information:</strong>
+                            Event details, registration records, attendance
+                            information, and other event-related information
+                            you provide or are authorized to manage.
+                        </li>
+
+                        <li>
+                            <strong>Operational information:</strong>
+                            Venue, speaker, sponsorship, incident, reminder,
+                            and notification details entered into the
+                            platform.
+                        </li>
+
+                        <li>
+                            <strong>Contact and feedback information:</strong>
+                            Information you submit through contact forms,
+                            feedback forms, or support requests.
+                        </li>
+
+                        <li>
+                            <strong>AI interaction information:</strong>
+                            Prompts, questions, and related context you
+                            submit when using AI-powered features.
+                        </li>
+
+                        <li>
+                            <strong>Technical information:</strong>
+                            Depending on hosting and configuration,
+                            server logs, timestamps, request metadata,
+                            browser information, and error diagnostics
+                            may be recorded.
+                        </li>
+                    </ul>
+
+                    <p class="mt-3">
+                        We should collect only information that is reasonably
+                        necessary for the platform's intended functions.
+                        The exact information collected depends on the
+                        features enabled in your deployment.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="usage">
+                    <h2>
+                        <i class="bi bi-gear"></i>
+                        3. How We Use Information
+                    </h2>
+
+                    <p>Information may be used to:</p>
+
+                    <ul>
+                        <li>Create and manage user accounts.</li>
+                        <li>Authenticate users and enforce access permissions.</li>
+                        <li>Support event creation, registration, and coordination.</li>
+                        <li>Manage venue, speaker, sponsorship, and incident records.</li>
+                        <li>Provide notifications, reminders, and requested responses.</li>
+                        <li>Operate AI-assisted event management features.</li>
+                        <li>Respond to contact requests and user feedback.</li>
+                        <li>Diagnose errors, maintain reliability, and improve security.</li>
+                        <li>Meet applicable legal obligations where required.</li>
+                    </ul>
+
+                    <p class="mt-3">
+                        Information should not be used for unrelated purposes
+                        without an appropriate legal basis or any consent
+                        required by applicable law.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="ai">
+                    <h2>
+                        <i class="bi bi-robot"></i>
+                        4. AI Features and Automated Processing
+                    </h2>
+
+                    <p>
+                        EventOps AI may provide AI-assisted functionality
+                        using an external AI service, including Google's
+                        Gemini API, when configured and enabled by the
+                        application operator.
+                    </p>
+
+                    <p>When you use an AI feature:</p>
+
+                    <ul>
+                        <li>
+                            Your prompt and relevant context may be sent
+                            to the configured AI provider to generate a response.
+                        </li>
+
+                        <li>
+                            Event information may be included in the context
+                            provided to the AI feature when necessary to
+                            answer your request.
+                        </li>
+
+                        <li>
+                            Processing by an external provider is subject
+                            to that provider's applicable terms, privacy
+                            documentation, and the configuration of the
+                            service being used.
+                        </li>
+
+                        <li>
+                            AI-generated responses may be inaccurate,
+                            incomplete, or unsuitable for a particular
+                            decision and should be reviewed before use.
+                        </li>
+                    </ul>
+
+                    <p class="mt-3">
+                        Do not enter passwords, API keys, payment card
+                        details, government identification numbers, or
+                        other sensitive personal information into AI prompts
+                        unless the application explicitly supports that
+                        processing and appropriate safeguards are in place.
+                    </p>
+
+                    <p>
+                        The platform operator should verify the actual AI
+                        provider, the data sent to it, applicable retention
+                        settings, and whether prompts or responses are logged
+                        before publishing this policy.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="sharing">
+                    <h2>
+                        <i class="bi bi-share"></i>
+                        5. Sharing and Disclosure
+                    </h2>
+
+                    <p>
+                        EventOps AI does not need to make user information
+                        publicly available simply because a user has an
+                        account. Access should be limited according to
+                        the application's authorization rules and the
+                        purposes for which information is processed.
+                    </p>
+
+                    <p>Information may be disclosed when necessary to:</p>
+
+                    <ul>
+                        <li>
+                            Provide a feature you request, including an
+                            external AI integration if enabled.
+                        </li>
+
+                        <li>
+                            Operate hosting, infrastructure, or other
+                            services used by the application.
+                        </li>
+
+                        <li>
+                            Respond to valid legal requirements or protect
+                            the rights and safety of individuals, where
+                            permitted or required by law.
+                        </li>
+
+                        <li>
+                            Support a business or operational change,
+                            where applicable law permits the disclosure.
+                        </li>
+                    </ul>
+
+                    <p class="mt-3">
+                        The actual recipients of information depend on the
+                        services integrated into the deployed application.
+                        The operator should document those recipients
+                        accurately.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="security">
+                    <h2>
+                        <i class="bi bi-shield-check"></i>
+                        6. Data Security
+                    </h2>
+
+                    <p>
+                        Protecting information requires appropriate technical
+                        and organizational safeguards. These may include:
+                    </p>
+
+                    <ul>
+                        <li>Secure password hashing and authentication.</li>
+                        <li>Server-side authorization checks for protected actions.</li>
+                        <li>HTTPS in production deployments.</li>
+                        <li>Secure handling of API keys and environment variables.</li>
+                        <li>Restricted access to databases and application logs.</li>
+                        <li>Dependency updates, monitoring, and appropriate backups.</li>
+                    </ul>
+
+                    <p class="mt-3">
+                        These are security measures to implement and maintain,
+                        not a guarantee that every measure is already active
+                        in every deployment. No internet-based system can
+                        guarantee absolute security.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="retention">
+                    <h2>
+                        <i class="bi bi-clock-history"></i>
+                        7. Data Retention
+                    </h2>
+
+                    <p>
+                        Information should be retained only for as long as
+                        reasonably necessary for its intended purpose,
+                        applicable operational needs, and legal obligations.
+                    </p>
+
+                    <p>
+                        Retention periods may differ for account records,
+                        event registrations, contact requests, feedback,
+                        security logs, backups, and AI interactions.
+                    </p>
+
+                    <p>
+                        This application does not specify a universal
+                        retention period in this policy. The operator should
+                        establish and publish appropriate retention periods
+                        based on the actual database, logging, backup,
+                        and third-party service configuration.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="rights">
+                    <h2>
+                        <i class="bi bi-person-check"></i>
+                        8. Your Privacy Choices and Rights
+                    </h2>
+
+                    <p>
+                        Depending on applicable law and the circumstances
+                        of processing, you may have rights to:
+                    </p>
+
+                    <ul>
+                        <li>Request access to personal information about you.</li>
+                        <li>Ask for inaccurate information to be corrected.</li>
+                        <li>Request deletion of information where applicable.</li>
+                        <li>Withdraw consent where processing relies on consent.</li>
+                        <li>Object to or restrict certain processing where applicable.</li>
+                        <li>Raise a privacy complaint with the appropriate authority.</li>
+                    </ul>
+
+                    <p class="mt-3">
+                        To make a request, contact the platform operator
+                        using the contact details provided below. Requests
+                        may need to be verified, and some information may
+                        need to be retained where the law permits or requires it.
+                    </p>
+
+                    <p>
+                        Specific rights and procedures depend on your
+                        location and the laws applicable to the deployment.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="cookies">
+                    <h2>
+                        <i class="bi bi-window"></i>
+                        9. Cookies and Browser Storage
+                    </h2>
+
+                    <p>
+                        The application may use cookies or similar browser
+                        storage to support authentication sessions, maintain
+                        application functionality, and improve security.
+                    </p>
+
+                    <p>
+                        Third-party libraries or integrations may also use
+                        browser storage depending on how they are configured.
+                        The operator should review the deployed application
+                        to identify the cookies and storage mechanisms
+                        actually in use.
+                    </p>
+
+                    <p>
+                        Blocking essential cookies may prevent login or
+                        other features from working correctly.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="children">
+                    <h2>
+                        <i class="bi bi-people"></i>
+                        10. Children's Privacy
+                    </h2>
+
+                    <p>
+                        EventOps AI is not specifically designed as a
+                        service for children. The platform operator should
+                        determine the appropriate minimum age and any
+                        consent or other requirements that apply to the
+                        intended users and jurisdiction.
+                    </p>
+
+                    <p>
+                        If you believe that personal information has been
+                        collected inappropriately from a child, contact
+                        the platform operator so the matter can be reviewed.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="third-party">
+                    <h2>
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        11. Third-Party Services and External Links
+                    </h2>
+
+                    <p>
+                        The application may rely on third-party services
+                        for AI processing, hosting, interface libraries,
+                        or other technical functionality.
+                    </p>
+
+                    <p>
+                        External websites and services operate under their
+                        own privacy policies and terms. EventOps AI cannot
+                        determine or guarantee how an independent service
+                        handles information outside the application's
+                        control.
+                    </p>
+
+                    <p>
+                        Before production use, the operator should identify
+                        the relevant providers and link to their current
+                        privacy documentation where appropriate.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="changes">
+                    <h2>
+                        <i class="bi bi-arrow-repeat"></i>
+                        12. Changes to This Policy
+                    </h2>
+
+                    <p>
+                        This policy may be updated when application features,
+                        integrations, data practices, or legal requirements
+                        change.
+                    </p>
+
+                    <p>
+                        The effective date at the top of this page should
+                        be updated whenever a revised policy is published.
+                        Where required, users will be notified of material
+                        changes or asked to provide consent.
+                    </p>
+                </section>
+
+                <section class="privacy-section" id="contact">
+                    <h2>
+                        <i class="bi bi-envelope"></i>
+                        13. Contact Us
+                    </h2>
+
+                    <p>
+                        If you have questions about this Privacy Policy,
+                        want to exercise a privacy right, or have a concern
+                        about how information is handled, contact the
+                        operator of EventOps AI.
+                    </p>
+
+                    <div class="privacy-contact">
+                        <h5 class="fw-bold mb-2">
+                            <i class="bi bi-chat-dots me-2"></i>
+                            Privacy questions?
+                        </h5>
+
+                        <p class="mb-3">
+                            Use the Contact page to send a privacy-related
+                            question or request.
+                        </p>
+
+                        <a href="{{ url_for('contact') }}">
+                            Contact EventOps AI
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <div class="privacy-bottom">
+            <i class="bi bi-shield-lock me-1"></i>
+            EventOps AI — Privacy and responsible data handling.
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+```

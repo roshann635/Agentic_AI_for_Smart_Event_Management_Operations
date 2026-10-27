@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ 'Edit' if speaker else 'Add' }} speaker</h1>
+<form method="post">
+  <input name="name" value="{{ speaker.name if speaker else '' }}" placeholder="Name" required>
+  <textarea name="bio" placeholder="Bio">{{ speaker.bio if speaker else '' }}</textarea>
+  <input name="session_title" value="{{ speaker.session_title if speaker else '' }}" placeholder="Session">
+  <input name="schedule" value="{{ speaker.schedule if speaker else '' }}" placeholder="Schedule">
+  <label><input name="availability" type="checkbox" {% if not speaker or speaker.availability %}checked{% endif %}> Available</label>
+  <button type="submit">Save</button>
+</form>
+{% endblock %}

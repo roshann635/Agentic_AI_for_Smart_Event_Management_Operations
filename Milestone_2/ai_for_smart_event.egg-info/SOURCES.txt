@@ -1,0 +1,7 @@
+app.py
+pyproject.toml
+ai_for_smart_event.egg-info/PKG-INFO
+ai_for_smart_event.egg-info/SOURCES.txt
+ai_for_smart_event.egg-info/dependency_links.txt
+ai_for_smart_event.egg-info/requires.txt
+ai_for_smart_event.egg-info/top_level.txt

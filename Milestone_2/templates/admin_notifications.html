@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Notifications</h1>
+<a href="{{ url_for('admin_notification_send') }}">Send notification</a>
+<ul>{% for notification in notifications %}<li>{{ notification.subject }} - {{ notification.recipient }}</li>{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Incidents</h1>
+<a href="{{ url_for('admin_incident_add') }}">Add incident</a>
+<ul>{% for incident in incidents %}<li>{{ incident.title }} - {{ incident.status }} ({{ incident.time_ago }})</li>{% endfor %}</ul>
+{% endblock %}

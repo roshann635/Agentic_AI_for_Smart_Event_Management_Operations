@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ 'Edit' if venue else 'Add' }} venue</h1>
+<form method="post">
+  <input name="name" value="{{ venue.name if venue else '' }}" placeholder="Name" required>
+  <input name="capacity" type="number" value="{{ venue.capacity if venue else '' }}" placeholder="Capacity">
+  <input name="utilization" type="number" step="0.01" value="{{ venue.utilization if venue else 0 }}" placeholder="Utilization">
+  <select name="status"><option>available</option><option>unavailable</option></select>
+  <button type="submit">Save</button>
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ 'Edit' if sponsorship else 'Add' }} sponsorship</h1>
+<form method="post">
+  <input name="sponsor_name" value="{{ sponsorship.sponsor_name if sponsorship else '' }}" placeholder="Sponsor" required>
+  <input name="commitment" value="{{ sponsorship.commitment if sponsorship else '' }}" placeholder="Commitment">
+  <input name="deliverables" value="{{ sponsorship.deliverables if sponsorship else '' }}" placeholder="Deliverables">
+  <input name="visibility_score" type="number" value="{{ sponsorship.visibility_score if sponsorship else 0 }}">
+  <input name="roi" type="number" step="0.01" value="{{ sponsorship.roi if sponsorship else 0 }}">
+  <button type="submit">Save</button>
+</form>
+{% endblock %}

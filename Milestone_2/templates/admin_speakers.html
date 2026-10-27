@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Speakers</h1>
+<a href="{{ url_for('admin_speaker_add') }}">Add speaker</a>
+<ul>{% for speaker in speakers %}<li>{{ speaker.name }} - {{ speaker.session_title }}</li>{% endfor %}</ul>
+{% endblock %}

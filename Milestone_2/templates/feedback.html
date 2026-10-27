@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Event Feedback — EventOps AI{% endblock %}
+
+{% block extra_css %}
+<style>
+    .feedback-form-wrapper {
+        min-height: 78vh;
+        margin: -1.5rem -0.75rem;
+        padding: 3rem 1rem;
+        background: linear-gradient(145deg, #f0f4ff 0%, #e6edf7 100%);
+    }
+    .feedback-form-card {
+        max-width: 760px;
+        margin: 0 auto;
+        border: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15);
+    }
+    .feedback-form-header {
+        padding: 2rem;
+        color: #fff;
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+    }
+    .feedback-form-header h1 {
+        font-size: clamp(1.7rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .feedback-form-header p {
+        margin-bottom: 0;
+        opacity: 0.85;
+    }
+    .feedback-form-body {
+        padding: 2rem;
+    }
+    .rating-options {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: 0.35rem;
+    }
+    .rating-options input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .rating-options label {
+        color: #cbd5e1;
+        cursor: pointer;
+        font-size: 2.25rem;
+        line-height: 1;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .rating-options label:hover,
+    .rating-options label:hover ~ label,
+    .rating-options input:checked ~ label {
+        color: #0d6efd;
+    }
+    .rating-options label:hover {
+        transform: translateY(-2px);
+    }
+    .feedback-form-body .form-control {
+        border: 1px solid #d8e2f0;
+        border-radius: 0.85rem;
+        padding: 0.8rem 1rem;
+    }
+    .feedback-form-body .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+    }
+    .feedback-form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    .feedback-form-actions .btn {
+        border-radius: 50px;
+        padding: 0.65rem 1.5rem;
+    }
+    @media (max-width: 576px) {
+        .feedback-form-wrapper {
+            margin: -1.5rem -0.75rem;
+            padding: 2rem 0.75rem;
+        }
+        .feedback-form-header,
+        .feedback-form-body {
+            padding: 1.4rem;
+        }
+        .feedback-form-actions {
+            align-items: stretch;
+            flex-direction: column-reverse;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="feedback-form-wrapper">
+    <div class="feedback-form-card">
+        <div class="feedback-form-header">
+            <h1><i class="bi bi-chat-square-heart me-2"></i>Feedback for {{ event.title }}</h1>
+            <p>Your feedback helps us improve future EventOps experiences.</p>
+        </div>
+        <div class="feedback-form-body">
+            <form method="post">
+                <div class="mb-4">
+                    <label class="form-label fw-semibold" id="rating-label">How would you rate this event?</label>
+                    <div class="rating-options" role="radiogroup" aria-labelledby="rating-label">
+                        {% for rating in range(5, 0, -1) %}
+                            <input id="rating{{ rating }}" name="rating" type="radio" value="{{ rating }}"
+                                   {% if existing and existing.rating == rating %}checked{% endif %} required>
+                            <label for="rating{{ rating }}" title="{{ rating }} out of 5">
+                                <i class="bi bi-star-fill"></i>
+                            </label>
+                        {% endfor %}
+                    </div>
+                    <small class="text-muted">Select from 1 to 5 stars.</small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold" for="comment">Share your experience</label>
+                    <textarea id="comment" name="comment" class="form-control" rows="6"
+                              placeholder="What did you enjoy? What could we improve?">{{ existing.comment if existing else '' }}</textarea>
+                </div>
+
+                <div class="feedback-form-actions">
+                    <a href="{{ url_for('event_detail', event_id=event.id) }}"
+                       class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1"></i> Back to Event
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check2-circle me-1"></i>
+                        {{ 'Update feedback' if existing else 'Save feedback' }}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

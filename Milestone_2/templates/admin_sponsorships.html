@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Sponsorships</h1>
+<a href="{{ url_for('admin_sponsorship_add') }}">Add sponsorship</a>
+<ul>{% for sponsorship in sponsorships %}<li>{{ sponsorship.sponsor_name }} - ROI {{ sponsorship.roi }}</li>{% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Manage Events</h1>
+<a href="{{ url_for('admin_event_add') }}">Add event</a>
+<ul>{% for event in events %}<li>{{ event.title }} - {{ event.date }} <a href="{{ url_for('admin_event_edit', event_id=event.id) }}">Edit</a></li>{% endfor %}</ul>
+{% endblock %}

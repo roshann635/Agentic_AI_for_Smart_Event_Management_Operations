@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ 'Edit' if incident else 'Add' }} incident</h1>
+<form method="post">
+  <input name="title" value="{{ incident.title if incident else '' }}" placeholder="Title" required>
+  <textarea name="description" placeholder="Description">{{ incident.description if incident else '' }}</textarea>
+  <select name="priority"><option>low</option><option>medium</option><option>high</option></select>
+  {% if incident %}<select name="status"><option>open</option><option>resolved</option></select>{% endif %}
+  <button type="submit">Save</button>
+</form>
+{% endblock %}
